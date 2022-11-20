@@ -2,7 +2,7 @@ package Homework2;
 
 import java.util.Scanner;
 
-public class Task0203 {
+public class zad3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double[] array = new double[5];

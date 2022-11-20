@@ -2,7 +2,7 @@ package Homework2;
 
 import java.util.Scanner;
 
-public class Task0205 {
+public class zad5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int[] array1 = {10, 12, 1, 8, 4};
