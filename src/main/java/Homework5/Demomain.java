@@ -21,17 +21,16 @@ public class Demomain {
             } else {
                 person.showPersonInfo();
             }
-
-
         }
-        //        for (int i = 0; i < arrayPerson.length; i++) {
-//            try {
-//                arrayPerson[i].showPersonInfo();
-//                arrayPerson[i].showStudentInfo();
-//                arrayPerson[i].showEmployeeInfo();
-//            } catch ( Exception e){}
-//        }
-            
+        for (Person person : arrayPerson   ) {
+            if (person == null) continue;
+             if (person instanceof Employee){
+                 int empAge = person.getAge();
+                 double overtime = ((Employee) person).calculateOvertime(2, empAge);
+                 System.out.printf("Name= %s age= %d overtimeAmount= %.2f euro %n",person.getName(),empAge,overtime);
+            //     System.out.println("Name = "+person.getName()+ "Age = "+ person.getAge() +"Overtime = "+ overtime);
+             }
+            }
         }
     }
 

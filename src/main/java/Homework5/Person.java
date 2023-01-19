@@ -12,6 +12,15 @@ public class Person {
         isMan = sex;
     }
 
+
+
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+
     public String allPersonInfo()
     {
         return String.format("name= %s ,Age= %d ,isMan = %s", name, age, isMan);

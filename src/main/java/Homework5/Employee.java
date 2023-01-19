@@ -1,6 +1,7 @@
 package Homework5;
 
 public class Employee extends Person {
+        private int empAge;
         private double daySalary;
 
 	public Employee(String n, int a,boolean sex, double ds)
@@ -12,6 +13,8 @@ public class Employee extends Person {
         {
             System.out.println("Employee[super=" + super.allPersonInfo() + ",salary=" + daySalary + "]");
         }
+
+
     public double calculateOvertime(double hours, int age)
     {
         if (age < 18 ){
