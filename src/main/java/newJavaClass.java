@@ -1,36 +1,27 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class newJavaClass {
-// Java program to demonstrate copying by
-// one by one assigning elements between arrays
 
     // Main class
+    public static WebDriver driver;
 
         // Main driver method
-        public static void main(String[] args)
-        {
-            // Input array a[]
-            int a[] = { 1, 8, 3 };
+        public static void main(String[] args){
 
-            // Create an array b[] of same size as a[]
-            int b[] = new int[a.length];
+            openChrome();
 
-            // Copying elements of a[] to b[]
-            for (int i = 0; i < a.length; i++)
-                b[i] = a[i];
 
-            // Changing b[] to verify that
-            // b[] is different from a[]
-          //  b[0]++;
+        }
 
-            // Display message only
-            System.out.println("Contents of a[] ");
+        public static void openChrome(){
+            System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver110.exe");
+            ChromeDriver driver;
+            driver = new ChromeDriver();
+            driver.get("https://www.google.com");
 
-            for (int i = 0; i < a.length; i++)
-                System.out.print(a[i] + " ");
-
-            // Display message only
-            System.out.println("\n\nContents of b[] ");
-
-            for (int i = 0; i < b.length; i++)
-                System.out.print(b[i] + " ");
+//            WebDriver driver = new MyWebDriverBuilder().build();
+//// Are we supposed to augment here or not?
+//            driver = new Augmenter().augment(driver);
         }
     }
