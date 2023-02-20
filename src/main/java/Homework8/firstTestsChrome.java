@@ -30,5 +30,7 @@ public class firstTestsChrome {
         // Click on the search button
         driver.findElement(By.name("#loginBut")).click();
 
+        driver.quit();
+
     }
 }
