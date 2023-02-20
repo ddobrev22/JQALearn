@@ -1,36 +1,34 @@
 package Homework8;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
 public class firstTestsChrome {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver110.exe");
-        ChromeDriver driver=new ChromeDriver();
+
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver110.exe");
+        WebDriver driver=new ChromeDriver();
+
+
+        driver.get("http://www.abv.bg/");
 
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        driver.navigate().to("https://www.abv.bg");
+        driver.findElement(By.cssSelector("#didomi-notice-agree-button")).click();
 
 
-   //     String next = scan.nextLine();
-   //     System.out.println("timeout");
+        driver.findElement(By.cssSelector("#username")).sendKeys("abc");
 
-        WebDriverWait w = new WebDriverWait(driver, 5);
-        w.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//iframe[@id='abv-GDPR-frame']")));
+        driver.findElement(By.cssSelector("#password")).sendKeys("1234");
 
-        System.out.println("timeout");
-        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
-        driver.wait(1000);
-        driver.findElement(By.xpath("//iframe[@id='abv-GDPR-frame']")).click();
+
+        // Click on the search button
+        driver.findElement(By.name("#loginBut")).click();
 
     }
 }

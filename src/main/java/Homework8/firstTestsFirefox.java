@@ -17,6 +17,6 @@ public class firstTestsFirefox {
 
 
         // Launch Website
-   //     driver.navigate().to("http://www.javatpoint.com/");
+       driver.navigate().to("http://www.javatpoint.com/");
     }
 }
