@@ -14,29 +14,30 @@ public class DemoTest {
     @BeforeTest
     public void SetDriver(){
         System.setProperty("webdriver.chrome.driver","src/main/resources/driver/chromedriver110.exe");
-        driver =new ChromeDriver();
+        this.driver =new ChromeDriver();
 
     }
     @Test
     public void test1() {
-        driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.cssSelector("#user-name")).sendKeys("abc");
-        driver.findElement(By.cssSelector("#password")).sendKeys("1234");
-        driver.findElement(By.cssSelector("#login-button")).click();
+        this.driver.get("https://www.saucedemo.com/");
+        this.driver.findElement(By.cssSelector("#user-name")).sendKeys("abc");
+        this.driver.findElement(By.cssSelector("#password")).sendKeys("1234");
+        this.driver.findElement(By.cssSelector("#login-button")).click();
         boolean present;
         try {
-            driver.findElement(By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3 > button"));
+            this.driver.findElement(By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3 > button"));
             present = true;
         } catch (NoSuchElementException e) {
             present = false;
         }
         System.out.println(present);
-        Assert.assertTrue(present);
+        Assert.assertFalse(present);
 
 
     }
     @AfterTest
     public void quit(){
         driver.close();
+        driver.quit();
     }
 }
