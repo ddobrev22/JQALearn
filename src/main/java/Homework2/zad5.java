@@ -10,7 +10,7 @@ public class zad5 {
         for (int i = 0; i < array1.length; i++) {
             array2[i] = array1[i];
         }
-        System.out.println("First array: ");
+        System.out.println("Homework8.First array: ");
         arrayPrint(array1);
 
         System.out.println("Copied array: ");

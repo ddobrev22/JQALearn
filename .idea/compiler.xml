@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JQALearn" />
+        <module name="05032023JQALearn" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JQALearn" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
